@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Quiz</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Bienvenido a <%= title %></h1>
-    <p>El portal donde podrá crear sus propios juegos!</p>
+	<h2>Quiz: el juejo de las preguntas</h2>
+	<form method="get" action="/quizes/answer">
+		Pregunta: <%= pregunta %><p>
+		<input type="text" name="respuesta" placeholder="Responda aquí"/>
+		<input type="submit" value="Enviar">
+	</form>
   </body>
 </html>
