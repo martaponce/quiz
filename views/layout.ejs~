@@ -26,8 +26,8 @@
 		<section class="main" id="s1">
 			<div>
 				<table>
-					<tr><td><a href="quizes/1">Capital de Italia<a/></td></tr>
-					<tr><td><a href="quizes/2">Capital de Portugal<a/></td></tr>
+					<tr><td><a href="quizes/1"><a/>Capital de Italia</td></tr>
+					<tr><td><a href="quizes/2"><a/>Capital de Portugal</td></tr>
 				</table>
 			</div>
 		</section>
