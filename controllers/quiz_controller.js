@@ -32,5 +32,5 @@ exports.answer = function(req, res) {
 	if (req.query.respuesta === req.quiz.respuesta) {    		
 		resultado = 'Correcto';
 	} 
-	res.render('quizes/answer' { quiz: req.quiz, respuesta: resultado});
+	res.render('quizes/answer', { quiz: req.quiz, respuesta: resultado});
 };
