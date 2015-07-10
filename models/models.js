@@ -11,7 +11,7 @@ var dialect  = (url[1]||null);
 var port     = (url[5]||null);
 var host     = (url[4]||null);
 var storage  = process.env.DATABASE_STORAGE;
-
+ 
 // Cargar Modelo ORM
 var Sequelize = require('sequelize');
 
@@ -30,7 +30,7 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 var quiz_path = path.join(__dirname,'quiz');
 var Quiz = sequelize.import(quiz_path);
 
-exports.Quiz = Quiz; //exportar definición de tabla Quiz
+exports.Quiz = Quiz; // exportar tabla Quiz
 
 // sequelize.sync() inicializa tabla de preguntas en DB
 sequelize.sync().then(function() {
