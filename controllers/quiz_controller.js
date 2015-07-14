@@ -30,14 +30,14 @@ exports.index = function(req, res) {
 
 // GET /quizes/:id
 exports.show = function(req, res) {
-	res.render('quizes/show', { quiz: req.quiz, errors: []});
+	res.render('quizes/show', { quiz: req.quiz});
 };
 
 //GET /quizes/answer
 exports.answer = function(req, res) {
 	var resultado = 'Incorrecto';
 	if (req.query.respuesta === req.quiz.respuesta) {resultado = 'Correcto';}
-	res.render('quizes/answer', {quiz: req.quiz, respuesta: resultado, errors: []});
+	res.render('quizes/answer', {quiz: req.quiz, respuesta: resultado});
 };
 
 // GET /quize/new
