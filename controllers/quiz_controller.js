@@ -70,7 +70,7 @@ exports.create = function(req, res) {
 				});
 			}
 		}
-	);
+	).catch(function(error){next(error)});
 };
 
 
@@ -96,12 +96,12 @@ exports.update = function (req,res) {
 				.then(function(){ res.redirect('/quizes');});
 			}
 		}
-	);
+	).catch(function(error){next(error)});
 };
 
 
-//delete /quize/new
-exports.delete = function(req, res) {
+//delete /quizes/:id
+exports.destroy = function(req, res) {
 	req.quiz.destroy().then(function() {
 		res.redirect('/quizes');
 	}).catch(function(error) {next(error)});
