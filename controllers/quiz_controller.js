@@ -23,11 +23,11 @@ exports.index = function(req, res){
 		var str = search.replace(re, '%');
 
 		models.Quiz.findAll({where: ["pregunta LIKE ?", "%" + str + "%"]}).then(function(quizes){
-			res.render('quizes/index.ejs', {search: search,quizes:quizes, errors: []});
+			res.render('quizes/index.ejs', {search: search, quizes:quizes, errors: []});
 		});
 	}else{
 		models.Quiz.findAll().then(function(quizes){
-			res.render('quizes/index.ejs', {search: search,quizes:quizes, errors: []});
+			res.render('quizes/index.ejs', {search: search, quizes:quizes, errors: []});
 		});
 	}
 };
@@ -99,7 +99,7 @@ exports.update = function (req,res) {
 };
 
 
-// delete /quize/new
+//delete /quize/new
 exports.delete = function(req, res) {
 	req.quiz.destroy().then(function() {
 		res.redirect('/quizes');
