@@ -1,5 +1,5 @@
 <form method="get" action= "/quizes">
-	<a>Filtrar:</a>	<input type="text" name="search" placeholder="Texto de busqueda..." /><input type="submit" value="Buscar" />
+	<a>Filtrar:</a>	<input type="text" name="search" value="Texto de busqueda..." /><input type="submit" value="Buscar" />
 </form>
 <% var text = "";
 	if(search && search != "")
@@ -8,9 +8,10 @@
 	<%= text %>
 
 <table>
-	<% var i; for (i=0; i<quizes.length; i++) { %>
+<% var i;for(i=0;i<quizes.length; i++){%>
 	<tr>
-		<td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+		<td><a href="quizes/<%=quizes[i].id %>"><%= quizes[i].pregunta %> </a><sup class="topic <%= quizes[i].tema %>"><%= quizes[i].tema %></sup></td>
+		<%if(session.user){%>
 		<td><a href="quizes/<%=quizes[i].id %>/edit"><button>Editar</button></a></td>
 		<td>					
 			<form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
@@ -19,7 +20,11 @@
 				</button>				
 			</form>
 		</td>
+		<%}%>
 	</tr>
-	<% } %>
+
+<% } %>
 </table>
-<p><a href="/quizes/new"><button type="button">Crear pregunta</button></p>
+<%if(session.user){%>
+	<p><a href="/quizes/new"><button type="button">Crear pregunta</button></p>
+<%}%>
