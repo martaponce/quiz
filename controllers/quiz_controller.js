@@ -37,6 +37,13 @@ exports.index = function(req, res){
 		});
 	}
 };
+/*exports.index = function(req, res){
+search = false;
+models.Quiz.findAll().then(function(quizes){
+res.render('quizes/index', {search: search,quizes:quizes, errors: []});
+});
+};*/
+
 
 //GET /quizes/:id
 exports.show = function(req, res){
